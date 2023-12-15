@@ -2,8 +2,8 @@ import s from './contacts.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
-import { deleteContact } from 'redux/operations';
-import { getContacts, getFilter } from 'redux/selectors';
+import { deleteContact } from 'redux/contacts/operations';
+import { getContacts, getFilter } from 'redux/contacts/selectors';
 
 const Contacts = () => {
   const contacts = useSelector(getContacts);
