@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/contacts/operations';
-import { getError, getIsLoading } from 'redux/contacts/selectors';
+import { useDispatch } from 'react-redux';
 
 import { refreshUser } from 'redux/auth/operation';
 import { useAuth } from 'hooks';
@@ -9,22 +7,18 @@ import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 
 import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
 
 import Home from 'pages/Home';
 import Register from 'pages/Register';
 import Login from 'pages/Login';
 import Layout from './layout/Layout';
-import Form from './form/form';
-import Contacts from './contacts/contacts';
-import Filter from './filter/filter';
+import Contacts from 'pages/Contacts';
+
+import { Container } from '@chakra-ui/react';
 
 const App = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
   const { isRefreshing } = useAuth();
-
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
@@ -32,7 +26,7 @@ const App = () => {
   return isRefreshing ? (
     <p>Refreshing user...</p>
   ) : (
-    <div className="container">
+    <Container>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -54,15 +48,12 @@ const App = () => {
           <Route
             path="/contacts"
             element={
-              <PrivateRoute
-                redirectTo="/login"
-                component={<p>CONTACT_LIST</p>}
-              />
+              <PrivateRoute redirectTo="/login" component={<Contacts />} />
             }
           />
         </Route>
       </Routes>
-    </div>
+    </Container>
   );
 };
 

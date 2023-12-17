@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/contacts/operations';
 import { getContacts, getFilter } from 'redux/contacts/selectors';
 
-const Contacts = () => {
+const ContactsList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
@@ -23,10 +23,10 @@ const Contacts = () => {
         <p className={s.nocontacts}>No contacts found</p>
       ) : (
         <ul className={s.contactlist}>
-          {filteredList.map(({ id, name, phone }) => (
+          {filteredList.map(({ id, name, number }) => (
             <li key={id} id={id} className={s.contactitem}>
               <p>
-                {name}: {phone}
+                {name}: {number}
               </p>
               <button
                 type="button"
@@ -43,9 +43,9 @@ const Contacts = () => {
   );
 };
 
-Contacts.propTypes = {
+ContactsList.propTypes = {
   data: PropTypes.array,
   onDelete: PropTypes.func,
 };
 
-export default Contacts;
+export default ContactsList;

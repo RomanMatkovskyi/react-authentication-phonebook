@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { addContact } from 'redux/contacts/operations';
 import { getContacts } from 'redux/contacts/selectors';
 import { useDispatch, useSelector } from 'react-redux';
+import { Button } from '@chakra-ui/react';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Form = () => {
     const form = event.target;
     let nickname = form.elements.name.value;
     let number = form.elements.number.value;
-    let data = { name: nickname, phone: number };
+    let data = { name: nickname, number };
 
     contacts.forEach(contact => {
       if (contact.name.toLowerCase() === nickname.toLowerCase()) {
@@ -52,9 +53,7 @@ const Form = () => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-        <button type="submit" className={s.addbutton}>
-          Add contact
-        </button>
+        <Button type="submit">Add contact</Button>
       </form>
     </>
   );
