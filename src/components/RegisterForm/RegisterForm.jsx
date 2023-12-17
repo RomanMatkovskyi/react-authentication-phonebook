@@ -21,15 +21,15 @@ export const RegisterForm = () => {
     <form onSubmit={handleSubmit} autoComplete="off">
       <label>
         Username
-        <input type="text" name="name" />
+        <input type="text" name="name" style={{ width: '100%' }} />
       </label>
       <label>
         Email
-        <input type="email" name="email" />
+        <input type="email" name="email" style={{ width: '100%' }} />
       </label>
       <label>
         Password
-        <input type="password" name="password" />
+        <input type="password" name="password" style={{ width: '100%' }} />
       </label>
       <button type="submit">Register</button>
     </form>

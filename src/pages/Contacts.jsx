@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
 import { getIsLoading } from 'redux/contacts/selectors';
 import ContactsList from 'components/contacts/ContactsList';
-import Form from 'components/form/Form';
 import Filter from 'components/Filter/Filter';
+import Form from 'components/Form/Form';
 const Contacts = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
