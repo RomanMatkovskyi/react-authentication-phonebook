@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
 import { getIsLoading } from 'redux/contacts/selectors';
 
-import Filter from 'components/Filter/Filter';
+import Filter from 'components/filter/filter';
 import ContactsList from 'components/contacts/ContactsList';
 import Form from 'components/Form/Form';
 const Contacts = () => {
