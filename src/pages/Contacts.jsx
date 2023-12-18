@@ -5,7 +5,7 @@ import { getIsLoading } from 'redux/contacts/selectors';
 
 import Filter from 'components/filter/filter';
 import ContactsList from 'components/contacts/ContactsList';
-import Form from 'components/Form/Form';
+import Form from 'components/form/form';
 const Contacts = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
