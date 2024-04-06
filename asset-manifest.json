@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-authentication-phonebook/static/css/main.3f712673.css",
-    "main.js": "/react-authentication-phonebook/static/js/main.d95c052f.js",
+    "main.js": "/react-authentication-phonebook/static/js/main.f990a022.js",
     "index.html": "/react-authentication-phonebook/index.html",
     "main.3f712673.css.map": "/react-authentication-phonebook/static/css/main.3f712673.css.map",
-    "main.d95c052f.js.map": "/react-authentication-phonebook/static/js/main.d95c052f.js.map"
+    "main.f990a022.js.map": "/react-authentication-phonebook/static/js/main.f990a022.js.map"
   },
   "entrypoints": [
     "static/css/main.3f712673.css",
-    "static/js/main.d95c052f.js"
+    "static/js/main.f990a022.js"
   ]
 }
